@@ -84,7 +84,12 @@ public class Anagrams extends JFrame {
         
         initComponents();
         getRootPane().setDefaultButton(guessButton);
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        String text = "";
+        for (int i = 0; i <= selectLevel.getSelectedIndex(); i++) {
+        	text = wordLibrary.getScrambledWord(wordIdx);
+        }
+        scrambledWord.setText(text);
+        
         pack();
         guessedWord.requestFocusInWindow();
         // Center in the screen
